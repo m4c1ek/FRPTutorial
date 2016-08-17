@@ -21,13 +21,21 @@ class CatViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        //        TASK I
         //        1. use the fetch image observable from CatProvider to display the image of the cat
         //        2. remember to display the result on the main thread
+        
+        //        TASK II
         //        3. show and hide an activity indicator when appropriate
         //        UIApplication.sharedApplication().networkActivityIndicatorVisible
+        
+        //        TASK III
         //        4. cancel the network request when the CatViewController is dismissed
+        
+        //        TASK IV
         //        5. apply the image filter in the same rx chain
-        //        6. use the network request observable to fetch the cat image when there is network connectivity
+        
+        //        TASK V
+        //        6. use the network request observable to fetch the cat image only when there is network connectivity
     }
 }
