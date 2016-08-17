@@ -40,6 +40,9 @@ class CatViewController: UIViewController {
         UIApplication.sharedApplication().networkActivityIndicatorVisible = true
         CatProvider()
             .fetchImageObservable(withWidth: Int(self.view.frame.width), height: Int(self.view.frame.height))
+            .flatMapLatest({ (image) -> Observable<UIImage> in
+                return CMYKFilter().filterImageObservable(image)
+            })
             .observeOn(MainScheduler.instance)
             .subscribe(onNext: { [weak self] (image) in
                 self?.catImageView.image = image
