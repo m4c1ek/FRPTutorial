@@ -38,7 +38,7 @@ class CatViewController: UIViewController {
         //        TASK V
         //        6. use the network request observable to fetch the cat image only when there is network connectivity
         UIApplication.sharedApplication().networkActivityIndicatorVisible = true
-        _ = CatProvider()
+        CatProvider()
             .fetchImageObservable(withWidth: Int(self.view.frame.width), height: Int(self.view.frame.height))
             .observeOn(MainScheduler.instance)
             .subscribe(onNext: { [weak self] (image) in
@@ -50,5 +50,6 @@ class CatViewController: UIViewController {
                 }, onDisposed: {
                     UIApplication.sharedApplication().networkActivityIndicatorVisible = false
             })
+            .addDisposableTo(disposeBag)
     }
 }
