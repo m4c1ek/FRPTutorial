@@ -16,6 +16,6 @@ class ImageDownloader {
     //    2. handle errors, use ImageDownloaderErrorCodes
     //    3. Think how can we dispose the networking code?
     func downloadImageObservable(path:String) -> Observable<UIImage> {
-        
+        return Observable.empty()
     }
 }

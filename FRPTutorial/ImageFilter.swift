@@ -20,6 +20,6 @@ class CMYKFilter : ImageFilter {
     //    2. handle errors, use ImageFilteringErrorCodes
     //    3. Think how can we dispose the filtering?
     func filterImageObservable(image: UIImage) -> Observable<UIImage> {
-        
+        return Observable.empty()
     }
 }
