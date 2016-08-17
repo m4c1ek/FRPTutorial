@@ -37,5 +37,11 @@ class CatViewController: UIViewController {
         
         //        TASK V
         //        6. use the network request observable to fetch the cat image only when there is network connectivity
+        _ = CatProvider()
+            .fetchImageObservable(withWidth: Int(self.view.frame.width), height: Int(self.view.frame.height))
+            .observeOn(MainScheduler.instance)
+            .subscribeNext({ [weak self] (image) in
+                self?.catImageView.image = image
+            })
     }
 }
